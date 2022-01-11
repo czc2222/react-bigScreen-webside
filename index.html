@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>大屏可视化项目</title>
+  <script>
+    const clientWidth = document.documentElement.clientWidth  //获取浏览器宽度
+    const clientHeight = document.documentElement.clientHeight // 获取浏览器高度
+    window.pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth //设置页面宽度
+    const pageHeight = pageWidth / (16 / 9) //设置页面高度
+    const string = `<style>
+                          html{
+                                 font-size: ${pageWidth / 100}px
+                          }
+                  </style>`
+    document.write(string)//写入页面
+  </script>
+<script type="module" crossorigin src="./assets/index.46750e74.js"></script>
+  <link rel="modulepreload" href="./assets/vendor.cf0234a8.js">
+  <link rel="stylesheet" href="./assets/index.bf50cc8d.css">
+</head>
+<body>
+<div id="root">
+  <script>
+    //root.style.width = pageWidth +'px' //设置root div的宽度和高度
+    root.style.height = pageHeight +'px'
+    root.style.marginTop = (clientHeight-pageHeight)/2 + 'px' //设置上下居中
+  </script>
+</div>
+
+
+</body>
+</html>
